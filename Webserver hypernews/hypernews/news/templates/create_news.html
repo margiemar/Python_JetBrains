@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+	<body>
+	    <form action="" method="POST">{% csrf_token %}
+			<a target="_blank" href="/news/">Back to news</a>
+			<br>
+			<p>Title:</p>
+			<input type="text" name="title">
+			<p>Text:</p>
+			<input type="text" name="text">
+
+
+			<br><br>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>
