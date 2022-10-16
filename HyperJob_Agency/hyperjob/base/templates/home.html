@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+    {% if request.user.is_superuser %}
+    <form action="vacancy/new" method="get"> {% csrf_token %}
+          <button type="submit">Create vacancy</button>
+    </form>
+    {% else %}
+    <form action="resume/new" method="get"> {% csrf_token %}
+        <button type="submit">Create resume</button>
+    </form>
+    {% endif %}
+{% endif %}
+</body>
+</html>
